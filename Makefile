@@ -34,7 +34,7 @@ LIBS =
 DEPS = 
 
 ### Creation des noms des objets a creer ###
-_OBJ = main.o MetaObjetGraphique.o ObjetGraphique.o
+_OBJ = main.o MetaObjetGraphique.o MetaCercle.o MetaRectangle.o
 OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 ### Nom de l'executable ###

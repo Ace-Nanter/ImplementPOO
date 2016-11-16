@@ -12,8 +12,8 @@ typedef struct ObjetGraphique {
     struct MetaObjetGraphique * myClass;
 
     // Attributs
-    int x;
-    int y;
+    int m_x;
+    int m_y;
 } ObjetGraphique;
 
 

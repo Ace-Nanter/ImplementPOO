@@ -22,7 +22,7 @@ typedef struct MetaObjetGraphique {
     int (*GetNbObjetGraphique)(void);
 
     // Constructeur de classe 
-    void(*ConstructeurObjetGraphique) (ObjetGraphique **);
+    void(*ConstructeurObjetGraphique) (ObjetGraphique *);
 } MetaObjetGraphique;
 
 // Instance de metaclasse
