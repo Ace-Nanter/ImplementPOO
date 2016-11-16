@@ -6,7 +6,7 @@
 
 
 
-struct MetaObjetGraphique {
+typedef struct MetaObjetGraphique {
 
     // Méthodes d'instance
     void (*setX)(int, ObjetGraphique * );
@@ -22,8 +22,13 @@ struct MetaObjetGraphique {
     int (*GetNbObjetGraphique)(void);
 
     // Constructeur de classe 
-    void(*ConstructeurObjetGraphique) (ObjetGraphique *);
-};
+    void(*ConstructeurObjetGraphique) (ObjetGraphique **);
+} MetaObjetGraphique;
 
+// Instance de metaclasse
+MetaObjetGraphique ClasseObjetGraphique;
+
+// Fonction pour initialiser la metaclasse
+void initMetaObjetGraphique();
 
 #endif
