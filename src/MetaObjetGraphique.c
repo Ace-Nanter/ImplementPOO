@@ -2,10 +2,10 @@
 
 // Constructeur
 void ConstructeurObjetGraphique(ObjetGraphique * this) {
-    this = (ObjetGraphique *) malloc(sizeof(ObjetGraphique));
     this->m_x = 0;
     this->m_y = 0;
     this->myClass = &ClasseObjetGraphique;
+    this->type = OG;
 }
 
 // Methode statique
@@ -30,6 +30,27 @@ void setY(int y, ObjetGraphique * this) {
     this->m_y = y;
 }
 
+void afficher(ObjetGraphique * this) {
+    ClasseObjetGraphique.TVMafficher[this->type](this);
+}
+
+void effacer(ObjetGraphique * this) {
+    ClasseObjetGraphique.TVMeffacer[this->type](this);
+}
+
+void deplacer(ObjetGraphique * this) {
+    ClasseObjetGraphique.TVMdeplacer[this->type](this);
+}
+
+// Méthodes héritées
+int getCentreX(ObjetGraphique * this) {
+    return ClasseObjetGraphique.TVMgetCentreX[this->type](this);
+}
+
+int getCentreY(ObjetGraphique * this) {
+    return ClasseObjetGraphique.TVMgetCentreY[this->type](this);
+}
+
 // Initialisation de MetaObjetGraphique
 void initMetaObjetGraphique() {
     ClasseObjetGraphique.getX = getX;
@@ -38,4 +59,11 @@ void initMetaObjetGraphique() {
     ClasseObjetGraphique.setY = setY;
     ClasseObjetGraphique.GetNbObjetGraphique = GetNbObjetGraphique;
     ClasseObjetGraphique.ConstructeurObjetGraphique = ConstructeurObjetGraphique;
+
+    ClasseObjetGraphique.afficher = &afficher;
+    ClasseObjetGraphique.effacer = &effacer;
+    ClasseObjetGraphique.deplacer = &deplacer;
+
+    ClasseObjetGraphique.getCentreX = &getCentreX;
+    ClasseObjetGraphique.getCentreY = &getCentreY;
 }

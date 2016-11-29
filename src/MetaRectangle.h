@@ -18,6 +18,14 @@ typedef struct MetaRectangle {
 
 } MetaRectangle;
 
+// Methodes héritées
+void afficherRectangle(ObjetGraphique *);
+void effacerRectangle(ObjetGraphique *);
+void deplacerRectangle(ObjetGraphique *);
+
+int getCentreRectangleX(ObjetGraphique *);
+int getCentreRectangleY(ObjetGraphique *);
+
 // instance de meta rectangle
 MetaRectangle ClasseRectangle;
 
